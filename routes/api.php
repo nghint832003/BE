@@ -2,6 +2,7 @@
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\QuestionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ResultController;
 
 
     Route::apiResource('tests', TestController::class);
@@ -29,4 +30,6 @@ use Illuminate\Support\Facades\Route;
         Route::post('createQuestions', [QuestionController::class, 'store']);
         Route::put('testQuestion/{id}',[TestController::class, 'updateQuestion']);
         Route::delete('deleteQuestion/{id}', [QuestionController::class, 'destroy']);
+        Route::post('submit-result', [ResultController::class, 'store']);
+
     });

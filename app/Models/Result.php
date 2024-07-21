@@ -9,15 +9,16 @@ class Result extends Model
 {
     use HasFactory;
 
-    protected $table = 'user_answers'; 
+    protected $table = 'results';
     public $timestamps = true;
 
-    protected $fillable=[
-    'UserTestID',
-    'TotalQuestions',
-    'CorrectAnswers',
-    'Score',
-    'created_at',
-    'updated_at	',
+    protected $fillable = [
+        'UserTestID',
+        'TotalQuestions',
+        'CorrectAnswers',
+        'Score',
+        'public_key',
+        'time_work',
+        'next_page',
     ];
 }
