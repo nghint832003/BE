@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Api\ApprovalController;
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\QuestionController;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +34,16 @@ use App\Http\Controllers\Api\ResultController;
         Route::delete('deleteQuestion/{id}', [QuestionController::class, 'destroy']);
         Route::post('submit-result', [ResultController::class, 'store']);
 
+        Route::get('approvals', [ApprovalController::class, 'index']);
+        Route::post('post-approval', [ApprovalController::class, 'store']);
+        Route::get('/{id}', [ApprovalController::class, 'show']);
+        Route::put('/approvals/{id}/status', [ApprovalController::class, 'updateStatus']);
+        Route::delete('/{id}', [ApprovalController::class, 'destroy']);
+
+
     });
+
+
+
+
+
